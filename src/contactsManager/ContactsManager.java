@@ -90,11 +90,12 @@ public class ContactsManager {
     public static void viewContacts() throws IndexOutOfBoundsException { //lists all contacts in phonebook
         try {
             System.out.println();
-            System.out.printf("Name     \t | \t\tPhone number%n");
-            System.out.println("--------------------------------");
+
+            System.out.printf("%-10s | %s%n", "Name","Phone Number");
+            System.out.println("---------------------------------");
             for (int i = 0; i < names.size(); i++) {
 
-                System.out.printf("%s     \t | \t\t%s %n", names.get(i), numbers.get(i));
+                System.out.printf("%-10s | %s %n", names.get(i), numbers.get(i));
             }
         } catch (IndexOutOfBoundsException e) {
             System.out.println("There are no contacts to display.");
@@ -116,7 +117,11 @@ public class ContactsManager {
             } else {
                 addEntry();
             }
-        } else {
+        } else if(name.isBlank() || name.isEmpty()){
+            System.out.println("Name cannot be empty.");
+            addEntry();
+        }
+        else {
             number = sc.getString("Enter entry phone number.");
             names.add(name);
             numbers.add(phoneNumberFormatter(number));
