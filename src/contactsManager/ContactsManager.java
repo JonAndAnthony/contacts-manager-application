@@ -1,6 +1,6 @@
 package contactsManager;
 
-import util.Input;
+import util.*;
 
 import java.io.*;
 import java.nio.charset.Charset;
