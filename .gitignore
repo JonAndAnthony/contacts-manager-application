@@ -1,2 +1,4 @@
 out/*
 src/contactsManager/contacts.txt/*
+/src/contactsManager/contacts.txt
+/out/
